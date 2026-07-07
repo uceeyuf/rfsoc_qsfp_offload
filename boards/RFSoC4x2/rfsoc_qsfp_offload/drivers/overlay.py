@@ -13,10 +13,9 @@ from . import packet_generator
 # "SAMPLE_FREQUENCY" : (DecimationFactor, XRFDC_FAB_CLK_DIVx)
 fs2div = {
     '4915200000.0': (1,0),
-    '2457600000.0': (2,2),
-    '1228800000.0': (4,3),
-    '614400000.0':  (8,4),
-    '307200000.0':  (16,5)
+    '1228800000.0': (4,2),
+    '614400000.0':  (8,3),
+    '307200000.0':  (16,4)
 }
 
 class Overlay (Overlay):
