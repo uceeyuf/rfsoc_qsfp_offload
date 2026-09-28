@@ -1,0 +1,1796 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date              : Mon Sep 28 23:59:25 2026
+| Host              : yijie running 64-bit Ubuntu 24.04.5 LTS
+| Command           : report_timing_summary -file /home/yijie/fpga/rfsoc_qsfp_offload/boards/RFSoC4x2/qsfp_udp_echo/build/timing_summary.rpt
+| Design            : echo_top
+| Device            : xczu48dr-ffvg1517
+| Speed File        : -2  PRODUCTION 1.32 01-31-2021
+| Design State      : Physopt postRoute
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule     Severity  Description                                      Violations  
+-------  --------  -----------------------------------------------  ----------  
+LUTAR-1  Warning   LUT drives async reset alert                     10          
+XDCB-6   Advisory  Timing constraint pointing to hierarchical pins  1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.018        0.000                      0               143008        0.010        0.000                      0               142992        0.447        0.000                       0                 60465  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                                                                                                Waveform(ns)             Period(ns)      Frequency(MHz)
+-----                                                                                                ------------             ----------      --------------
+clk_100                                                                                              {0.000 5.000}            10.000          100.000         
+  clk_125_mmcm                                                                                       {0.000 4.000}            8.000           125.000         
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {0.000 25.000}           50.000          20.000          
+qsfp0_mgt_refclk_0_p                                                                                 {0.000 3.200}            6.400           156.250         
+  qpll0outclk_out[0]                                                                                 {0.000 0.039}            0.078           12890.630       
+    GTYE4_CHANNEL_TXOUTCLKPCS[0]                                                                     {0.000 1.552}            3.103           322.266         
+    GTYE4_CHANNEL_TXOUTCLKPCS[1]                                                                     {0.000 1.552}            3.103           322.266         
+    GTYE4_CHANNEL_TXOUTCLKPCS[2]                                                                     {0.000 1.552}            3.103           322.266         
+    GTYE4_CHANNEL_TXOUTCLKPCS[3]                                                                     {0.000 1.552}            3.103           322.266         
+    rxoutclk_out[0]                                                                                  {0.000 1.552}            3.103           322.266         
+    txoutclk_out[0]                                                                                  {0.000 1.552}            3.103           322.266         
+  qpll0outrefclk_out[0]                                                                              {0.000 3.200}            6.400           156.250         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                                                                                    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                                                                                    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_100                                                                                                                                                                                                                                                2.000        0.000                       0                     1  
+  clk_125_mmcm                                                                                             6.340        0.000                      0                  395        0.040        0.000                      0                  395        3.725        0.000                       0                   261  
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK       12.096        0.000                      0                  992        0.032        0.000                      0                  992       24.468        0.000                       0                   479  
+    GTYE4_CHANNEL_TXOUTCLKPCS[0]                                                                           1.891        0.000                      0                   34        0.127        0.000                      0                   34        1.277        0.000                       0                    15  
+    GTYE4_CHANNEL_TXOUTCLKPCS[1]                                                                           1.891        0.000                      0                   34        0.173        0.000                      0                   34        1.277        0.000                       0                    15  
+    GTYE4_CHANNEL_TXOUTCLKPCS[2]                                                                           1.924        0.000                      0                   34        0.135        0.000                      0                   34        1.277        0.000                       0                    15  
+    GTYE4_CHANNEL_TXOUTCLKPCS[3]                                                                           2.042        0.000                      0                   34        0.098        0.000                      0                   34        1.277        0.000                       0                    15  
+    rxoutclk_out[0]                                                                                        1.324        0.000                      0                  969        0.049        0.000                      0                  969        0.447        0.000                       0                   666  
+    txoutclk_out[0]                                                                                        0.018        0.000                      0               140295        0.010        0.000                      0               140295        0.543        0.000                       0                 58998  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock                                                                                           To Clock                                                                                                 WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                                                                                           --------                                                                                                 -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+txoutclk_out[0]                                                                                      dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK        2.618        0.000                      0                    8                                                                        
+dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  txoutclk_out[0]                                                                                           49.544        0.000                      0                    8                                                                        
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group                                                                                           From Clock                                                                                           To Clock                                                                                                 WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------                                                                                           ----------                                                                                           --------                                                                                                 -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**                                                                                    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK       46.165        0.000                      0                  100        0.102        0.000                      0                  100  
+**async_default**                                                                                    txoutclk_out[0]                                                                                      txoutclk_out[0]                                                                                            1.815        0.000                      0                  105        0.122        0.000                      0                  105  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_100
+  To Clock:  clk_100
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        2.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_100
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk_p }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location   Pin
+Min Period        n/a     MMCME4_ADV/CLKIN1  n/a            1.071         10.000      8.929      MMCM_X0Y0  clk_mmcm/CLKIN1
+Max Period        n/a     MMCME4_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCM_X0Y0  clk_mmcm/CLKIN1
+Low Pulse Width   Slow    MMCME4_ADV/CLKIN1  n/a            3.000         5.000       2.000      MMCM_X0Y0  clk_mmcm/CLKIN1
+High Pulse Width  Slow    MMCME4_ADV/CLKIN1  n/a            3.000         5.000       2.000      MMCM_X0Y0  clk_mmcm/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_125_mmcm
+  To Clock:  clk_125_mmcm
+
+Setup :            0  Failing Endpoints,  Worst Slack        6.340ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.040ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.725ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             6.340ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_125_mmcm  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[20]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_125_mmcm  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk_125_mmcm
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (clk_125_mmcm rise@8.000ns - clk_125_mmcm rise@0.000ns)
+  Data Path Delay:        1.427ns  (logic 0.453ns (31.736%)  route 0.974ns (68.264%))
+  Logic Levels:           3  (LUT4=2 LUT5=1)
+  Clock Path Skew:        -0.100ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.288ns = ( 12.288 - 8.000 ) 
+    Source Clock Delay      (SCD):    4.058ns
+    Clock Pessimism Removal (CPR):    -0.330ns
+  Clock Uncertainty:      0.071ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.124ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.748ns (routing 1.334ns, distribution 1.414ns)
+  Clock Net Delay (Destination): 2.448ns (routing 1.214ns, distribution 1.234ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_125_mmcm rise edge)
+                                                      0.000     0.000 r  
+    AM15                                              0.000     0.000 r  clk_p (IN)
+                         net (fo=0)                   0.100     0.100    clk_in_ibufds/I
+    HPIOBDIFFINBUF_X0Y10 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      0.617     0.717 r  clk_in_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.767    clk_in_ibufds/OUT
+    AM15                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.767 r  clk_in_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.397     1.164    clk_in
+    MMCM_X0Y0            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.127     1.037 r  clk_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.245     1.282    clk_125_mmcm
+    BUFGCE_X0Y23         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     1.310 r  clk_125_bufg/O
+    X1Y2 (CLOCK_ROOT)    net (fo=259, routed)         2.748     4.058    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/gtwiz_reset_clk_freerun_in[0]
+    SLICE_X1Y269         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y269         FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.078     4.136 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[9]/Q
+                         net (fo=2, routed)           0.265     4.401    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[9]
+    SLICE_X1Y271         LUT4 (Prop_G6LUT_SLICEM_I1_O)
+                                                      0.150     4.551 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_sat_i_7/O
+                         net (fo=1, routed)           0.047     4.598    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_sat_i_7_n_0
+    SLICE_X1Y271         LUT4 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.101     4.699 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_sat_i_3/O
+                         net (fo=2, routed)           0.330     5.028    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_sat_i_3_n_0
+    SLICE_X0Y268         LUT5 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.124     5.152 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr[0]_i_1/O
+                         net (fo=26, routed)          0.333     5.485    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr[0]_i_1_n_0
+    SLICE_X1Y270         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[20]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_125_mmcm rise edge)
+                                                      8.000     8.000 r  
+    AM15                                              0.000     8.000 r  clk_p (IN)
+                         net (fo=0)                   0.079     8.079    clk_in_ibufds/I
+    HPIOBDIFFINBUF_X0Y10 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      0.507     8.586 r  clk_in_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     8.626    clk_in_ibufds/OUT
+    AM15                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     8.626 r  clk_in_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.344     8.970    clk_in
+    MMCM_X0Y0            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.630     9.600 r  clk_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.216     9.816    clk_125_mmcm
+    BUFGCE_X0Y23         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     9.840 r  clk_125_bufg/O
+    X1Y2 (CLOCK_ROOT)    net (fo=259, routed)         2.448    12.288    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/gtwiz_reset_clk_freerun_in[0]
+    SLICE_X1Y270         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[20]/C
+                         clock pessimism             -0.330    11.958    
+                         clock uncertainty           -0.071    11.886    
+    SLICE_X1Y270         FDRE (Setup_EFF_SLICEM_C_CE)
+                                                     -0.061    11.825    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_rx_cdr_to_ctr_reg[20]
+  -------------------------------------------------------------------
+                         required time                         11.825    
+                         arrival time                          -5.485    
+  -------------------------------------------------------------------
+                         slack                                  6.340    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.040ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_125_mmcm  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk_125_mmcm  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk_125_mmcm
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_125_mmcm rise@0.000ns - clk_125_mmcm rise@0.000ns)
+  Data Path Delay:        0.129ns  (logic 0.061ns (47.105%)  route 0.068ns (52.895%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.044ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.342ns
+    Source Clock Delay      (SCD):    2.508ns
+    Clock Pessimism Removal (CPR):    -0.211ns
+  Clock Net Delay (Source):      1.511ns (routing 0.732ns, distribution 0.779ns)
+  Clock Net Delay (Destination): 1.684ns (routing 0.812ns, distribution 0.872ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_125_mmcm rise edge)
+                                                      0.000     0.000 r  
+    AM15                                              0.000     0.000 r  clk_p (IN)
+                         net (fo=0)                   0.079     0.079    clk_in_ibufds/I
+    HPIOBDIFFINBUF_X0Y10 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      0.283     0.362 r  clk_in_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.040     0.402    clk_in_ibufds/OUT
+    AM15                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.402 r  clk_in_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.203     0.605    clk_in
+    MMCM_X0Y0            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                      0.230     0.835 r  clk_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.146     0.981    clk_125_mmcm
+    BUFGCE_X0Y23         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.998 r  clk_125_bufg/O
+    X1Y2 (CLOCK_ROOT)    net (fo=259, routed)         1.511     2.508    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/gtwiz_reset_clk_freerun_in[0]
+    SLICE_X3Y285         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y285         FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     2.547 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[3]/Q
+                         net (fo=6, routed)           0.052     2.600    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[3]
+    SLICE_X2Y285         LUT6 (Prop_D6LUT_SLICEL_I3_O)
+                                                      0.022     2.622 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr[6]_i_1/O
+                         net (fo=1, routed)           0.016     2.638    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/p_0_in__0[6]
+    SLICE_X2Y285         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_125_mmcm rise edge)
+                                                      0.000     0.000 r  
+    AM15                                              0.000     0.000 r  clk_p (IN)
+                         net (fo=0)                   0.100     0.100    clk_in_ibufds/I
+    HPIOBDIFFINBUF_X0Y10 DIFFINBUF (Prop_DIFFINBUF_HPIOBDIFFINBUF_DIFF_IN_P_O)
+                                                      0.388     0.488 r  clk_in_ibufds/DIFFINBUF_INST/O
+                         net (fo=1, routed)           0.050     0.538    clk_in_ibufds/OUT
+    AM15                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.538 r  clk_in_ibufds/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.230     0.768    clk_in
+    MMCM_X0Y0            MMCME4_ADV (Prop_MMCM_CLKIN1_CLKOUT0)
+                                                     -0.295     0.473 r  clk_mmcm/CLKOUT0
+                         net (fo=1, routed)           0.166     0.639    clk_125_mmcm
+    BUFGCE_X0Y23         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.658 r  clk_125_bufg/O
+    X1Y2 (CLOCK_ROOT)    net (fo=259, routed)         1.684     2.342    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/gtwiz_reset_clk_freerun_in[0]
+    SLICE_X2Y285         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[6]/C
+                         clock pessimism              0.211     2.552    
+    SLICE_X2Y285         FDRE (Hold_DFF_SLICEL_C_D)
+                                                      0.046     2.598    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_reset_controller_internal.gen_single_instance.gtwiz_reset_inst/sm_reset_tx_pll_timer_ctr_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -2.598    
+                         arrival time                           2.638    
+  -------------------------------------------------------------------
+                         slack                                  0.040    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_125_mmcm
+Waveform(ns):       { 0.000 4.000 }
+Period(ns):         8.000
+Sources:            { clk_mmcm/CLKOUT0 }
+
+Check Type        Corner  Lib Pin   Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     BUFGCE/I  n/a            1.290         8.000       6.710      BUFGCE_X0Y23  clk_125_bufg/I
+Low Pulse Width   Slow    FDRE/C    n/a            0.275         4.000       3.725      SLICE_X2Y269  cmac_inst/inst/master_watchdog_barking_reg/C
+High Pulse Width  Slow    FDRE/C    n/a            0.275         4.000       3.725      SLICE_X2Y269  cmac_inst/inst/master_watchdog_barking_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  To Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+
+Setup :            0  Failing Endpoints,  Worst Slack       12.096ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.032ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       24.468ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             12.096ns  (required time - arrival time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/iTDO_reg/C
+                            (rising edge-triggered cell FDRE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TDO
+                            (falling edge-triggered cell BSCANE2 clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            25.000ns  (dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK fall@25.000ns - dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns)
+  Data Path Delay:        3.833ns  (logic 0.319ns (8.322%)  route 3.514ns (91.678%))
+  Logic Levels:           2  (LUT3=1 LUT6=1)
+  Clock Path Skew:        -8.835ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.000ns = ( 25.000 - 25.000 ) 
+    Source Clock Delay      (SCD):    8.835ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + DCD
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    Duty Cycle Distortion   (DCD):    0.200ns
+  Clock Net Delay (Source):      2.307ns (routing 1.152ns, distribution 1.155ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      4.300     4.300 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           2.200     6.500    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     6.528 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         2.307     8.835    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/m_bscan_tck[0]
+    SLICE_X41Y206        FDRE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/iTDO_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y206        FDRE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.080     8.915 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/iTDO_reg/Q
+                         net (fo=1, routed)           2.282    11.197    dbg_hub/inst/BSCANID.u_xsdbm_id/TDO
+    SLICE_X105Y103       LUT3 (Prop_F6LUT_SLICEL_I2_O)
+                                                      0.089    11.286 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch_i_1/O
+                         net (fo=2, routed)           0.230    11.516    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_tdo[0]
+    SLICE_X106Y103       LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.150    11.666 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/s_bscan_tdo_INST_0/O
+                         net (fo=1, routed)           1.002    12.668    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TDO
+    CONFIG_SITE_X0Y0     BSCANE2                                      r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TDO
+  -------------------------------------------------------------------    -------------------
+
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK fall edge)
+                                                     25.000    25.000 f  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000    25.000 f  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+                         clock pessimism              0.000    25.000    
+                         clock uncertainty           -0.235    24.765    
+    CONFIG_SITE_X0Y0     BSCANE2 (Setup_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TDO)
+                                                      0.000    24.765    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst
+  -------------------------------------------------------------------
+                         required time                         24.765    
+                         arrival time                         -12.668    
+  -------------------------------------------------------------------
+                         slack                                 12.096    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.032ns  (arrival time - required time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[15]/C
+                            (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[14]/D
+                            (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns - dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns)
+  Data Path Delay:        0.085ns  (logic 0.039ns (46.054%)  route 0.046ns (53.946%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    7.281ns
+    Source Clock Delay      (SCD):    2.912ns
+    Clock Pessimism Removal (CPR):    4.363ns
+  Clock Net Delay (Source):      1.271ns (routing 0.631ns, distribution 0.640ns)
+  Clock Net Delay (Destination): 1.434ns (routing 0.705ns, distribution 0.729ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      0.465     0.465 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           1.159     1.624    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     1.641 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         1.271     2.912    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/m_bscan_tck[0]
+    SLICE_X42Y219        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y219        FDCE (Prop_DFF_SLICEM_C_Q)
+                                                      0.039     2.951 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[15]/Q
+                         net (fo=3, routed)           0.046     2.996    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/fifo_din[14]
+    SLICE_X42Y219        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      4.300     4.300 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           1.528     5.828    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     5.847 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         1.434     7.281    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/m_bscan_tck[0]
+    SLICE_X42Y219        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[14]/C
+                         clock pessimism             -4.363     2.918    
+    SLICE_X42Y219        FDCE (Hold_CFF2_SLICEM_C_D)
+                                                      0.047     2.965    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/shift_reg_in_reg[14]
+  -------------------------------------------------------------------
+                         required time                         -2.965    
+                         arrival time                           2.996    
+  -------------------------------------------------------------------
+                         slack                                  0.032    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+Waveform(ns):       { 0.000 25.000 }
+Period(ns):         50.000
+Sources:            { dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK }
+
+Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     BUFGCE/I    n/a            1.290         50.000      48.710     BUFGCE_X0Y96   dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/I
+Low Pulse Width   Slow    RAMD32/CLK  n/a            0.532         25.000      24.468     SLICE_X42Y217  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg_0_15_0_13/RAMA/CLK
+High Pulse Width  Slow    RAMD32/CLK  n/a            0.532         25.000      24.468     SLICE_X42Y217  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm_gen.dm/RAM_reg_0_15_0_13/RAMA/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[0]
+  To Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[0]
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.891ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.127ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.277ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.891ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/CE
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (GTYE4_CHANNEL_TXOUTCLKPCS[0] rise@3.103ns - GTYE4_CHANNEL_TXOUTCLKPCS[0] rise@0.000ns)
+  Data Path Delay:        1.019ns  (logic 0.232ns (22.766%)  route 0.787ns (77.234%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.450ns = ( 3.553 - 3.103 ) 
+    Source Clock Delay      (SCD):    0.669ns
+    Clock Pessimism Removal (CPR):    0.133ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.669     0.669    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X1Y266         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X1Y266         FDCE (Prop_AFF2_SLICEM_C_Q)
+                                                      0.080     0.749 f  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/Q
+                         net (fo=4, routed)           0.327     1.077    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm
+    SLICE_X1Y266         LUT1 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.152     1.229 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1/O
+                         net (fo=12, routed)          0.460     1.689    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1_n_0
+    SLICE_X2Y267         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[0] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.450     3.553    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y267         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/C
+                         clock pessimism              0.133     3.686    
+                         clock uncertainty           -0.046     3.639    
+    SLICE_X2Y267         FDRE (Setup_EFF2_SLICEL_C_CE)
+                                                     -0.060     3.579    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]
+  -------------------------------------------------------------------
+                         required time                          3.579    
+                         arrival time                          -1.689    
+  -------------------------------------------------------------------
+                         slack                                  1.891    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.127ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[0]
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (GTYE4_CHANNEL_TXOUTCLKPCS[0] rise@0.000ns - GTYE4_CHANNEL_TXOUTCLKPCS[0] rise@0.000ns)
+  Data Path Delay:        0.268ns  (logic 0.060ns (22.348%)  route 0.208ns (77.652%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.079ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.658ns
+    Source Clock Delay      (SCD):    0.447ns
+    Clock Pessimism Removal (CPR):    0.133ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.447     0.447    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y265         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y265         FDCE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.060     0.507 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/Q
+                         net (fo=9, routed)           0.208     0.715    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]
+    SLICE_X2Y266         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.658     0.658    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y266         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/C
+                         clock pessimism             -0.133     0.526    
+    SLICE_X2Y266         FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     0.588    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.588    
+                         arrival time                           0.715    
+  -------------------------------------------------------------------
+                         slack                                  0.127    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         GTYE4_CHANNEL_TXOUTCLKPCS[0]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     FDCE/C   n/a            0.550         3.103       2.553      SLICE_X1Y266  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X1Y266  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X1Y266  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[0].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[1]
+  To Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[1]
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.891ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.173ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.277ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.891ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[1]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/CE
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[1]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[1]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (GTYE4_CHANNEL_TXOUTCLKPCS[1] rise@3.103ns - GTYE4_CHANNEL_TXOUTCLKPCS[1] rise@0.000ns)
+  Data Path Delay:        0.977ns  (logic 0.180ns (18.432%)  route 0.797ns (81.568%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        -0.129ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.375ns = ( 3.478 - 3.103 ) 
+    Source Clock Delay      (SCD):    0.559ns
+    Clock Pessimism Removal (CPR):    0.056ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[1] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y5   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.559     0.559    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y265         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y265         FDCE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     0.640 f  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/Q
+                         net (fo=4, routed)           0.325     0.965    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm
+    SLICE_X0Y264         LUT1 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.099     1.064 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1__0/O
+                         net (fo=12, routed)          0.472     1.536    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1__0_n_0
+    SLICE_X0Y264         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[1] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y5   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.375     3.478    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y264         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]/C
+                         clock pessimism              0.056     3.534    
+                         clock uncertainty           -0.046     3.487    
+    SLICE_X0Y264         FDRE (Setup_EFF2_SLICEL_C_CE)
+                                                     -0.060     3.427    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[5]
+  -------------------------------------------------------------------
+                         required time                          3.427    
+                         arrival time                          -1.536    
+  -------------------------------------------------------------------
+                         slack                                  1.891    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.173ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[1]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[1]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[1]
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (GTYE4_CHANNEL_TXOUTCLKPCS[1] rise@0.000ns - GTYE4_CHANNEL_TXOUTCLKPCS[1] rise@0.000ns)
+  Data Path Delay:        0.226ns  (logic 0.040ns (17.699%)  route 0.186ns (82.301%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.395ns
+    Source Clock Delay      (SCD):    0.308ns
+    Clock Pessimism Removal (CPR):    0.081ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[1] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y5   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.308     0.308    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y264         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y264         FDRE (Prop_CFF2_SLICEL_C_Q)
+                                                      0.040     0.348 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[3]/Q
+                         net (fo=1, routed)           0.186     0.534    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt[3]
+    SLICE_X0Y264         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[1] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y5   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.395     0.395    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y264         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[4]/C
+                         clock pessimism             -0.081     0.314    
+    SLICE_X0Y264         FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     0.361    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.361    
+                         arrival time                           0.534    
+  -------------------------------------------------------------------
+                         slack                                  0.173    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         GTYE4_CHANNEL_TXOUTCLKPCS[1]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[1].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     FDCE/C   n/a            0.550         3.103       2.553      SLICE_X0Y265  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X0Y265  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X0Y265  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[1].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[2]
+  To Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[2]
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.924ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.135ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.277ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.924ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[2]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[2]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[2]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (GTYE4_CHANNEL_TXOUTCLKPCS[2] rise@3.103ns - GTYE4_CHANNEL_TXOUTCLKPCS[2] rise@0.000ns)
+  Data Path Delay:        0.986ns  (logic 0.180ns (18.258%)  route 0.806ns (81.742%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.397ns = ( 3.500 - 3.103 ) 
+    Source Clock Delay      (SCD):    0.543ns
+    Clock Pessimism Removal (CPR):    0.059ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[2] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y6   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.543     0.543    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y275         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y275         FDCE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     0.624 f  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/Q
+                         net (fo=4, routed)           0.451     1.075    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm
+    SLICE_X0Y279         LUT1 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.099     1.174 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1__1/O
+                         net (fo=12, routed)          0.355     1.529    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]_i_1__1_n_0
+    SLICE_X0Y280         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[2] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y6   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.397     3.500    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y280         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[1]/C
+                         clock pessimism              0.059     3.559    
+                         clock uncertainty           -0.046     3.512    
+    SLICE_X0Y280         FDRE (Setup_AFF2_SLICEL_C_CE)
+                                                     -0.059     3.453    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[1]
+  -------------------------------------------------------------------
+                         required time                          3.453    
+                         arrival time                          -1.529    
+  -------------------------------------------------------------------
+                         slack                                  1.924    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.135ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[2]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[2]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[2]
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (GTYE4_CHANNEL_TXOUTCLKPCS[2] rise@0.000ns - GTYE4_CHANNEL_TXOUTCLKPCS[2] rise@0.000ns)
+  Data Path Delay:        0.355ns  (logic 0.060ns (16.911%)  route 0.295ns (83.089%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.157ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.607ns
+    Source Clock Delay      (SCD):    0.391ns
+    Clock Pessimism Removal (CPR):    0.059ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[2] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y6   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.391     0.391    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y278         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y278         FDCE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.060     0.451 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/Q
+                         net (fo=9, routed)           0.295     0.746    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]
+    SLICE_X0Y279         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[2] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y6   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.607     0.607    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X0Y279         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/C
+                         clock pessimism             -0.059     0.548    
+    SLICE_X0Y279         FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     0.610    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.610    
+                         arrival time                           0.746    
+  -------------------------------------------------------------------
+                         slack                                  0.135    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         GTYE4_CHANNEL_TXOUTCLKPCS[2]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[2].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     FDCE/C   n/a            0.550         3.103       2.553      SLICE_X0Y275  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X0Y275  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X0Y275  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[2].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[3]
+  To Clock:  GTYE4_CHANNEL_TXOUTCLKPCS[3]
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.042ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.098ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.277ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.042ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[3]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/D
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[3]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[3]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (GTYE4_CHANNEL_TXOUTCLKPCS[3] rise@3.103ns - GTYE4_CHANNEL_TXOUTCLKPCS[3] rise@0.000ns)
+  Data Path Delay:        0.913ns  (logic 0.131ns (14.348%)  route 0.782ns (85.652%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.126ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.442ns = ( 3.545 - 3.103 ) 
+    Source Clock Delay      (SCD):    0.624ns
+    Clock Pessimism Removal (CPR):    0.056ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[3] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y7   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.624     0.624    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y281         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y281         FDRE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     0.705 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[7]/Q
+                         net (fo=1, routed)           0.269     0.974    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt[7]
+    SLICE_X2Y279         LUT2 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.050     1.024 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_i_1__2/O
+                         net (fo=1, routed)           0.513     1.537    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_i_1__2_n_0
+    SLICE_X1Y279         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[3] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y7   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.442     3.545    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X1Y279         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+                         clock pessimism              0.056     3.601    
+                         clock uncertainty           -0.046     3.554    
+    SLICE_X1Y279         FDCE (Setup_AFF2_SLICEM_C_D)
+                                                      0.025     3.579    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg
+  -------------------------------------------------------------------
+                         required time                          3.579    
+                         arrival time                          -1.537    
+  -------------------------------------------------------------------
+                         slack                                  2.042    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.098ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+                            (rising edge-triggered cell FDCE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[3]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by GTYE4_CHANNEL_TXOUTCLKPCS[3]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             GTYE4_CHANNEL_TXOUTCLKPCS[3]
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (GTYE4_CHANNEL_TXOUTCLKPCS[3] rise@0.000ns - GTYE4_CHANNEL_TXOUTCLKPCS[3] rise@0.000ns)
+  Data Path Delay:        0.340ns  (logic 0.060ns (17.654%)  route 0.280ns (82.346%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.180ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.676ns
+    Source Clock Delay      (SCD):    0.440ns
+    Clock Pessimism Removal (CPR):    0.056ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[3] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y7   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.440     0.440    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y279         FDCE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y279         FDCE (Prop_EFF2_SLICEL_C_Q)
+                                                      0.060     0.500 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r_reg[4]/Q
+                         net (fo=9, routed)           0.280     0.780    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.intclk_rrst_n_r[4]
+    SLICE_X2Y280         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock GTYE4_CHANNEL_TXOUTCLKPCS[3] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y7   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS
+                         net (fo=15, routed)          0.676     0.676    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/GTYE4_CHANNEL_TXOUTCLKPCS[0]
+    SLICE_X2Y280         FDRE                                         r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]/C
+                         clock pessimism             -0.056     0.620    
+    SLICE_X2Y280         FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     0.682    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.wait_cnt_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.682    
+                         arrival time                           0.780    
+  -------------------------------------------------------------------
+                         slack                                  0.098    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         GTYE4_CHANNEL_TXOUTCLKPCS[3]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[3].GTYE4_CHANNEL_PRIM_INST/TXOUTCLKPCS }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
+Min Period        n/a     FDCE/C   n/a            0.550         3.103       2.553      SLICE_X1Y279  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+Low Pulse Width   Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X1Y279  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+High Pulse Width  Slow    FDCE/C   n/a            0.275         1.552       1.277      SLICE_X1Y279  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_pwrgood_delay_inst[3].delay_powergood_inst/gen_powergood_delay.int_pwr_on_fsm_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  rxoutclk_out[0]
+  To Clock:  rxoutclk_out[0]
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.324ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.049ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        0.447ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.324ns  (required time - arrival time)
+  Source:                 cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXUSRCLK2
+                            (rising edge-triggered cell GTYE4_CHANNEL clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/data_in_d1_reg[46]/D
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             rxoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (rxoutclk_out[0] rise@3.103ns - rxoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        1.569ns  (logic 0.907ns (57.808%)  route 0.662ns (42.192%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.189ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.383ns = ( 4.486 - 3.103 ) 
+    Source Clock Delay      (SCD):    1.647ns
+    Clock Pessimism Removal (CPR):    0.075ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.431ns (routing 0.548ns, distribution 0.883ns)
+  Clock Net Delay (Destination): 1.190ns (routing 0.496ns, distribution 0.694ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.086     0.086    cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/rxoutclk_out[0]
+    BUFG_GT_X0Y99        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.216 r  cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=665, routed)         1.431     1.647    cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/rxusrclk_in[0]
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                                r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXUSRCLK2
+  -------------------------------------------------------------------    -------------------
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL (Prop_GTYE4_CHANNEL_RXUSRCLK2_RXDATA[46])
+                                                      0.907     2.554 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXDATA[46]
+                         net (fo=1, routed)           0.662     3.216    cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/D[46]
+    SLICE_X0Y228         FDRE                                         r  cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/data_in_d1_reg[46]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rxoutclk_out[0] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.079     3.182    cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/rxoutclk_out[0]
+    BUFG_GT_X0Y99        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     3.296 r  cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=665, routed)         1.190     4.486    cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/CLK
+    SLICE_X0Y228         FDRE                                         r  cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/data_in_d1_reg[46]/C
+                         clock pessimism              0.075     4.561    
+                         clock uncertainty           -0.046     4.515    
+    SLICE_X0Y228         FDRE (Setup_DFF2_SLICEL_C_D)
+                                                      0.025     4.540    cmac_inst/inst/i_cmac_usplus_0_rx_64bit_sync_serdes_data0/data_in_d1_reg[46]
+  -------------------------------------------------------------------
+                         required time                          4.540    
+                         arrival time                          -3.216    
+  -------------------------------------------------------------------
+                         slack                                  1.324    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.049ns  (arrival time - required time)
+  Source:                 cmac_inst/inst/i_cmac_usplus_0_rx_16bit_sync_alt_data2/data_out_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb/RX_SERDES_ALT_DATA2[10]
+                            (rising edge-triggered cell CMACE4 clocked by rxoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             rxoutclk_out[0]
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (rxoutclk_out[0] rise@0.000ns - rxoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        0.521ns  (logic 0.059ns (11.324%)  route 0.462ns (88.676%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.057ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.569ns
+    Source Clock Delay      (SCD):    1.437ns
+    Clock Pessimism Removal (CPR):    0.075ns
+  Clock Net Delay (Source):      1.244ns (routing 0.496ns, distribution 0.748ns)
+  Clock Net Delay (Destination): 1.353ns (routing 0.548ns, distribution 0.805ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.079     0.079    cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/rxoutclk_out[0]
+    BUFG_GT_X0Y99        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.193 r  cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=665, routed)         1.244     1.437    cmac_inst/inst/i_cmac_usplus_0_rx_16bit_sync_alt_data2/CLK
+    SLICE_X4Y243         FDRE                                         r  cmac_inst/inst/i_cmac_usplus_0_rx_16bit_sync_alt_data2/data_out_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y243         FDRE (Prop_EFF_SLICEL_C_Q)
+                                                      0.059     1.496 r  cmac_inst/inst/i_cmac_usplus_0_rx_16bit_sync_alt_data2/data_out_reg[10]/Q
+                         net (fo=1, routed)           0.462     1.958    cmac_inst/inst/i_cmac_usplus_0_top/rx_serdes_alt_data2[10]
+    CMACE4_X0Y0          CMACE4                                       r  cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb/RX_SERDES_ALT_DATA2[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock rxoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK
+                         net (fo=2, routed)           0.086     0.086    cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/rxoutclk_out[0]
+    BUFG_GT_X0Y99        BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.216 r  cmac_inst/inst/cmac_gtwiz_userclk_rx_inst/gen_gtwiz_userclk_rx_main.bufg_gt_usrclk_inst/O
+    X0Y3 (CLOCK_ROOT)    net (fo=665, routed)         1.353     1.569    cmac_inst/inst/i_cmac_usplus_0_top/rx_serdes_clk[3]
+    CMACE4_X0Y0          CMACE4                                       r  cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb/RX_SERDES_CLK[2]
+                         clock pessimism             -0.075     1.494    
+    CMACE4_X0Y0          CMACE4 (Hold_CMACE4_RX_SERDES_CLK[2]_RX_SERDES_ALT_DATA2[10])
+                                                      0.415     1.909    cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb
+  -------------------------------------------------------------------
+                         required time                         -1.909    
+                         arrival time                           1.958    
+  -------------------------------------------------------------------
+                         slack                                  0.049    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         rxoutclk_out[0]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXOUTCLK }
+
+Check Type        Corner  Lib Pin                  Reference Pin            Required(ns)  Actual(ns)  Slack(ns)  Location            Pin
+Min Period        n/a     CMACE4/RX_SERDES_CLK[3]  n/a                      2.560         3.103       0.543      CMACE4_X0Y0         cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb/RX_SERDES_CLK[3]
+Low Pulse Width   Slow    GTYE4_CHANNEL/RXUSRCLK   n/a                      0.880         1.552       0.672      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXUSRCLK
+High Pulse Width  Slow    GTYE4_CHANNEL/RXUSRCLK   n/a                      0.880         1.552       0.672      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXUSRCLK
+Max Skew          Slow    GTYE4_CHANNEL/RXUSRCLK   GTYE4_CHANNEL/RXUSRCLK2  0.478         0.031       0.447      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/RXUSRCLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  txoutclk_out[0]
+  To Clock:  txoutclk_out[0]
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.018ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        0.543ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.018ns  (required time - arrival time)
+  Source:                 tx_fifo/mem_reg_8/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            r12/rate_reg[39]/D
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (txoutclk_out[0] rise@3.103ns - txoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        2.826ns  (logic 1.089ns (38.542%)  route 1.737ns (61.458%))
+  Logic Levels:           13  (CARRY8=5 LUT2=1 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.238ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.643ns = ( 4.746 - 3.103 ) 
+    Source Clock Delay      (SCD):    2.014ns
+    Clock Pessimism Removal (CPR):    0.133ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.799ns (routing 0.532ns, distribution 1.267ns)
+  Clock Net Delay (Destination): 1.451ns (routing 0.485ns, distribution 0.966ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.085     0.085    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.215 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.799     2.014    tx_fifo/gt_txusrclk2
+    RAMB18_X1Y76         RAMB18E2                                     r  tx_fifo/mem_reg_8/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X1Y76         RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKARDCLK_DOUTADOUT[0])
+                                                      0.220     2.234 r  tx_fifo/mem_reg_8/DOUTADOUT[0]
+                         net (fo=621, routed)         0.391     2.625    tx_fifo/m_axis_pipe_reg_reg[0]_0[4]
+    SLICE_X15Y187        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.090     2.715 r  tx_fifo/r12_i_108/O
+                         net (fo=1, routed)           0.252     2.967    tx_fifo/r12_i_108_n_0
+    SLICE_X17Y186        LUT6 (Prop_B6LUT_SLICEL_I5_O)
+                                                      0.051     3.018 r  tx_fifo/r12_i_76/O
+                         net (fo=3, routed)           0.155     3.173    tx_fifo/r12_i_76_n_0
+    SLICE_X17Y187        LUT6 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.050     3.223 r  tx_fifo/r12_i_46/O
+                         net (fo=3, routed)           0.202     3.425    tx_fifo/r12_i_46_n_0
+    SLICE_X17Y185        LUT5 (Prop_B6LUT_SLICEL_I4_O)
+                                                      0.051     3.476 r  tx_fifo/r12_i_16/O
+                         net (fo=2, routed)           0.095     3.571    tx_fifo/r12_i_16_n_0
+    SLICE_X17Y186        LUT6 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.096     3.667 r  tx_fifo/r12_i_14/O
+                         net (fo=2, routed)           0.057     3.724    tx_fifo/r12_i_14_n_0
+    SLICE_X17Y185        LUT6 (Prop_H6LUT_SLICEL_I5_O)
+                                                      0.124     3.848 r  tx_fifo/r12_i_11/O
+                         net (fo=3, routed)           0.247     4.095    tx_fifo/r12_i_11_n_0
+    SLICE_X19Y185        LUT6 (Prop_H6LUT_SLICEL_I3_O)
+                                                      0.036     4.131 r  tx_fifo/r12_i_2/O
+                         net (fo=3, routed)           0.185     4.316    r12/inc[5]
+    SLICE_X20Y188        LUT2 (Prop_F6LUT_SLICEM_I1_O)
+                                                      0.051     4.367 r  r12/rate[7]_i_3/O
+                         net (fo=1, routed)           0.022     4.389    r12/rate[7]_i_3_n_0
+    SLICE_X20Y188        CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.159     4.548 r  r12/rate_reg[7]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     4.574    r12/rate_reg[7]_i_1_n_0
+    SLICE_X20Y189        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.589 r  r12/rate_reg[15]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     4.615    r12/rate_reg[15]_i_1_n_0
+    SLICE_X20Y190        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.630 r  r12/rate_reg[23]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     4.656    r12/rate_reg[23]_i_1_n_0
+    SLICE_X20Y191        CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.015     4.671 r  r12/rate_reg[31]_i_1/CO[7]
+                         net (fo=1, routed)           0.026     4.697    r12/rate_reg[31]_i_1_n_0
+    SLICE_X20Y192        CARRY8 (Prop_CARRY8_SLICEM_CI_O[7])
+                                                      0.116     4.813 r  r12/rate_reg[39]_i_2/O[7]
+                         net (fo=1, routed)           0.026     4.839    r12/p_0_in[39]
+    SLICE_X20Y192        FDRE                                         r  r12/rate_reg[39]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.078     3.181    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     3.295 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.451     4.746    r12/clk
+    SLICE_X20Y192        FDRE                                         r  r12/rate_reg[39]/C
+                         clock pessimism              0.133     4.879    
+                         clock uncertainty           -0.046     4.832    
+    SLICE_X20Y192        FDRE (Setup_HFF_SLICEM_C_D)
+                                                      0.025     4.857    r12/rate_reg[39]
+  -------------------------------------------------------------------
+                         required time                          4.857    
+                         arrival time                          -4.839    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/time_counter_lsb_reg[19]/C
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/debug_slot_reg[179]/D
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (txoutclk_out[0] rise@0.000ns - txoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        0.238ns  (logic 0.058ns (24.370%)  route 0.180ns (75.630%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.166ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.856ns
+    Source Clock Delay      (SCD):    1.612ns
+    Clock Pessimism Removal (CPR):    0.078ns
+  Clock Net Delay (Source):      1.420ns (routing 0.485ns, distribution 0.935ns)
+  Clock Net Delay (Destination): 1.641ns (routing 0.532ns, distribution 1.109ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.078     0.078    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     0.192 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.420     1.612    nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/ap_clk
+    SLICE_X21Y354        FDRE                                         r  nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/time_counter_lsb_reg[19]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X21Y354        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.058     1.670 r  nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/time_counter_lsb_reg[19]/Q
+                         net (fo=1, routed)           0.180     1.850    nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/time_counter_lsb_reg_n_0_[19]
+    SLICE_X22Y368        FDRE                                         r  nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/debug_slot_reg[179]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.085     0.085    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.215 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.641     1.856    nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/ap_clk
+    SLICE_X22Y368        FDRE                                         r  nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/debug_slot_reg[179]/C
+                         clock pessimism             -0.078     1.778    
+    SLICE_X22Y368        FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     1.840    nl_inst/inst/network_layer_bd_i/bandwidth_udp_out/inst/debug_slot_reg[179]
+  -------------------------------------------------------------------
+                         required time                         -1.840    
+                         arrival time                           1.850    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         txoutclk_out[0]
+Waveform(ns):       { 0.000 1.552 }
+Period(ns):         3.103
+Sources:            { cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK }
+
+Check Type        Corner  Lib Pin                 Reference Pin            Required(ns)  Actual(ns)  Slack(ns)  Location            Pin
+Min Period        n/a     CMACE4/RX_CLK           n/a                      2.560         3.103       0.543      CMACE4_X0Y0         cmac_inst/inst/i_cmac_usplus_0_top/obsibdaaf4ker2wujpra0sjb/RX_CLK
+Low Pulse Width   Slow    GTYE4_CHANNEL/TXUSRCLK  n/a                      0.880         1.552       0.672      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXUSRCLK
+High Pulse Width  Slow    GTYE4_CHANNEL/TXUSRCLK  n/a                      0.880         1.552       0.672      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXUSRCLK
+Max Skew          Slow    GTYE4_CHANNEL/TXUSRCLK  GTYE4_CHANNEL/TXUSRCLK2  0.624         0.037       0.587      GTYE4_CHANNEL_X0Y4  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXUSRCLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  txoutclk_out[0]
+  To Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.618ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.618ns  (required time - arrival time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.103ns  (MaxDelay Path 3.103ns)
+  Data Path Delay:        0.510ns  (logic 0.076ns (14.902%)  route 0.434ns (85.098%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 3.103ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y218                                     0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/C
+    SLICE_X42Y218        FDCE (Prop_EFF_SLICEM_C_Q)
+                                                      0.076     0.076 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[3]/Q
+                         net (fo=1, routed)           0.434     0.510    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[3]
+    SLICE_X43Y219        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                    3.103     3.103    
+    SLICE_X43Y219        FDCE (Setup_HFF2_SLICEL_C_D)
+                                                      0.025     3.128    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[3]
+  -------------------------------------------------------------------
+                         required time                          3.128    
+                         arrival time                          -0.510    
+  -------------------------------------------------------------------
+                         slack                                  2.618    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  To Clock:  txoutclk_out[0]
+
+Setup :            0  Failing Endpoints,  Worst Slack       49.544ns,  Total Violation        0.000ns
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             49.544ns  (required time - arrival time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/C
+                            (rising edge-triggered cell FDCE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             txoutclk_out[0]
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (MaxDelay Path 50.000ns)
+  Data Path Delay:        0.481ns  (logic 0.080ns (16.632%)  route 0.401ns (83.368%))
+  Logic Levels:           0  
+  Timing Exception:       MaxDelay Path 50.000ns -datapath_only
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y216                                     0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/C
+    SLICE_X44Y216        FDCE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.080     0.080 r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.wr_pntr_gc_reg[1]/Q
+                         net (fo=1, routed)           0.401     0.481    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q[1]
+    SLICE_X43Y215        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   50.000    50.000    
+    SLICE_X43Y215        FDCE (Setup_GFF2_SLICEL_C_D)
+                                                      0.025    50.025    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gnxpm_cdc.gsync_stage[1].rd_stg_inst/Q_reg_reg[1]
+  -------------------------------------------------------------------
+                         required time                         50.025    
+                         arrival time                          -0.481    
+  -------------------------------------------------------------------
+                         slack                                 49.544    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+  To Clock:  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+
+Setup :            0  Failing Endpoints,  Worst Slack       46.165ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.102ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             46.165ns  (required time - arrival time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/portno_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR
+                            (recovery check against rising-edge clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            50.000ns  (dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@50.000ns - dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns)
+  Data Path Delay:        3.477ns  (logic 0.367ns (10.555%)  route 3.110ns (89.445%))
+  Logic Levels:           2  (LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.257ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.014ns = ( 54.014 - 50.000 ) 
+    Source Clock Delay      (SCD):    8.936ns
+    Clock Pessimism Removal (CPR):    4.665ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.408ns (routing 1.152ns, distribution 1.256ns)
+  Clock Net Delay (Destination): 2.045ns (routing 1.046ns, distribution 0.999ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      4.300     4.300 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           2.200     6.500    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     6.528 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         2.408     8.936    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/s_bscan_tck
+    SLICE_X106Y102       FDRE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/portno_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X106Y102       FDRE (Prop_FFF2_SLICEL_C_Q)
+                                                      0.081     9.017 f  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/portno_reg[3]/Q
+                         net (fo=1, routed)           0.198     9.215    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/portno[3]
+    SLICE_X106Y102       LUT6 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.150     9.365 f  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0]_INST_0_i_1/O
+                         net (fo=5, routed)           0.158     9.523    dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0]_INST_0_i_1_n_0
+    SLICE_X106Y103       LUT4 (Prop_C5LUT_SLICEL_I3_O)
+                                                      0.136     9.659 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_sel[0]_INST_0/O
+                         net (fo=11, routed)          2.754    12.413    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[6]_0
+    SLICE_X41Y208        FDCE                                         f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                     50.000    50.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000    50.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      0.465    50.465 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           1.480    51.945    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    51.969 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         2.045    54.014    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/m_bscan_tck[0]
+    SLICE_X41Y208        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/C
+                         clock pessimism              4.665    58.679    
+                         clock uncertainty           -0.035    58.644    
+    SLICE_X41Y208        FDCE (Recov_EFF_SLICEM_C_CLR)
+                                                     -0.066    58.578    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]
+  -------------------------------------------------------------------
+                         required time                         58.578    
+                         arrival time                         -12.413    
+  -------------------------------------------------------------------
+                         slack                                 46.165    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.102ns  (arrival time - required time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rst_wr_reg2_reg/C
+                            (rising edge-triggered cell FDPE clocked by dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg/PRE
+                            (removal check against rising-edge clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK  {rise@0.000ns fall@25.000ns period=50.000ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns - dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise@0.000ns)
+  Data Path Delay:        0.133ns  (logic 0.039ns (29.323%)  route 0.094ns (70.677%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.051ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    7.261ns
+    Source Clock Delay      (SCD):    2.894ns
+    Clock Pessimism Removal (CPR):    4.316ns
+  Clock Net Delay (Source):      1.253ns (routing 0.631ns, distribution 0.622ns)
+  Clock Net Delay (Destination): 1.414ns (routing 0.705ns, distribution 0.709ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      0.465     0.465 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           1.159     1.624    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     1.641 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         1.253     2.894    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_clk
+    SLICE_X45Y219        FDPE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rst_wr_reg2_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y219        FDPE (Prop_AFF2_SLICEM_C_Q)
+                                                      0.039     2.933 f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rst_wr_reg2_reg/Q
+                         net (fo=1, routed)           0.094     3.027    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.rst_wr_reg2
+    SLICE_X44Y219        FDPE                                         f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK rise edge)
+                                                      0.000     0.000 r  
+    CONFIG_SITE_X0Y0     BSCANE2                      0.000     0.000 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK
+    CONFIG_SITE_X0Y0     BSCANE2 (Prop_BSCAN1_CONFIG_SITE_INTERNAL_TCK_TCK)
+                                                      4.300     4.300 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK
+                         net (fo=1, routed)           1.528     5.828    dbg_hub/inst/BSCANID.u_xsdbm_id/tck_bs
+    BUFGCE_X0Y96         BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     5.847 r  dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.u_bufg_icon_tck/O
+    X3Y2 (CLOCK_ROOT)    net (fo=478, routed)         1.414     7.261    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/wr_clk
+    SLICE_X44Y219        FDPE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg/C
+                         clock pessimism             -4.316     2.945    
+    SLICE_X44Y219        FDPE (Remov_DFF2_SLICEL_C_PRE)
+                                                     -0.020     2.925    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_WR/U_WR_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_wrfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.wr_rst_asreg_reg
+  -------------------------------------------------------------------
+                         required time                         -2.925    
+                         arrival time                           3.027    
+  -------------------------------------------------------------------
+                         slack                                  0.102    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+Path Group:  **async_default**
+From Clock:  txoutclk_out[0]
+  To Clock:  txoutclk_out[0]
+
+Setup :            0  Failing Endpoints,  Worst Slack        1.815ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             1.815ns  (required time - arrival time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/FSM_onehot_current_state_reg[0]/PRE
+                            (recovery check against rising-edge clock txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             **async_default**
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Requirement:            3.103ns  (txoutclk_out[0] rise@3.103ns - txoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        1.081ns  (logic 0.079ns (7.309%)  route 1.002ns (92.691%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.095ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.640ns = ( 4.743 - 3.103 ) 
+    Source Clock Delay      (SCD):    1.864ns
+    Clock Pessimism Removal (CPR):    0.129ns
+  Clock Uncertainty:      0.046ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.060ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.649ns (routing 0.532ns, distribution 1.117ns)
+  Clock Net Delay (Destination): 1.448ns (routing 0.485ns, distribution 0.963ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.085     0.085    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.130     0.215 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.649     1.864    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/clk
+    SLICE_X40Y209        FDRE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y209        FDRE (Prop_HFF_SLICEL_C_Q)
+                                                      0.079     1.943 f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_reg[0]/Q
+                         net (fo=176, routed)         1.002     2.945    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/out[0]
+    SLICE_X40Y213        FDPE                                         f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/FSM_onehot_current_state_reg[0]/PRE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      3.103     3.103 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     3.103 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.078     3.181    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.114     3.295 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.448     4.743    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/clk
+    SLICE_X40Y213        FDPE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/FSM_onehot_current_state_reg[0]/C
+                         clock pessimism              0.129     4.872    
+                         clock uncertainty           -0.046     4.826    
+    SLICE_X40Y213        FDPE (Recov_EFF_SLICEL_C_PRE)
+                                                     -0.066     4.760    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/FSM_onehot_current_state_reg[0]
+  -------------------------------------------------------------------
+                         required time                          4.760    
+                         arrival time                          -2.945    
+  -------------------------------------------------------------------
+                         slack                                  1.815    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/clr_rd_req_reg/C
+                            (rising edge-triggered cell FDCE clocked by txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Destination:            dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/G_POS_EDGE.flag_reg/CLR
+                            (removal check against rising-edge clock txoutclk_out[0]  {rise@0.000ns fall@1.552ns period=3.103ns})
+  Path Group:             **async_default**
+  Path Type:              Removal (Min at Fast Process Corner)
+  Requirement:            0.000ns  (txoutclk_out[0] rise@0.000ns - txoutclk_out[0] rise@0.000ns)
+  Data Path Delay:        0.114ns  (logic 0.038ns (33.426%)  route 0.076ns (66.574%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.163ns
+    Source Clock Delay      (SCD):    1.029ns
+    Clock Pessimism Removal (CPR):    0.123ns
+  Clock Net Delay (Source):      0.904ns (routing 0.287ns, distribution 0.617ns)
+  Clock Net Delay (Destination): 1.024ns (routing 0.319ns, distribution 0.705ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.052     0.052    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.073     0.125 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       0.904     1.029    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/clk
+    SLICE_X41Y213        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/clr_rd_req_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y213        FDCE (Prop_BFF_SLICEM_C_Q)
+                                                      0.038     1.067 f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/clr_rd_req_reg/Q
+                         net (fo=2, routed)           0.076     1.142    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/clr_rd_req
+    SLICE_X41Y213        FDCE                                         f  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/G_POS_EDGE.flag_reg/CLR
+  -------------------------------------------------------------------    -------------------
+
+                         (clock txoutclk_out[0] rise edge)
+                                                      0.000     0.000 r  
+    GTYE4_CHANNEL_X0Y4   GTYE4_CHANNEL                0.000     0.000 r  cmac_inst/inst/cmac_usplus_0_gt_i/inst/gen_gtwizard_gtye4_top.cmac_usplus_0_gt_gtwizard_gtye4_inst/gen_gtwizard_gtye4.gen_channel_container[1].gen_enabled_channel.gtye4_channel_wrapper_inst/channel_inst/gtye4_channel_gen.gen_gtye4_channel_inst[0].GTYE4_CHANNEL_PRIM_INST/TXOUTCLK
+                         net (fo=2, routed)           0.057     0.057    cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/txoutclk_out[0]
+    BUFG_GT_X0Y118       BUFG_GT (Prop_BUFG_GT_I_O)
+                                                      0.082     0.139 r  cmac_inst/inst/cmac_gtwiz_userclk_tx_inst/gen_gtwiz_userclk_tx_main.bufg_gt_usrclk_inst/O
+    X1Y4 (CLOCK_ROOT)    net (fo=58997, routed)       1.024     1.163    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/clk
+    SLICE_X41Y213        FDCE                                         r  dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/G_POS_EDGE.flag_reg/C
+                         clock pessimism             -0.123     1.040    
+    SLICE_X41Y213        FDCE (Remov_HFF2_SLICEM_C_CLR)
+                                                     -0.020     1.020    dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_XSDB_BUS_CONTROLLER/U_RD_REQ_FLAG/G_POS_EDGE.flag_reg
+  -------------------------------------------------------------------
+                         required time                         -1.020    
+                         arrival time                           1.142    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+
+
+
+

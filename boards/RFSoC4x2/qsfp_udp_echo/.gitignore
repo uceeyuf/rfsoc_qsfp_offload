@@ -1,0 +1,3 @@
+build/
+host/dpdk_loopback/dpdk_loopback
+host/dpdk_loopback/out_*/

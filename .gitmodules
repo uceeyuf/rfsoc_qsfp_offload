@@ -1,3 +1,6 @@
 [submodule "boards/ip_repo/xup_vitis_network_example"]
 	path = boards/ip_repo/xup_vitis_network_example
 	url = https://github.com/Xilinx/xup_vitis_network_example.git
+[submodule "boards/RFSoC4x2/qsfp_udp_echo/third_party/verilog-ethernet"]
+	path = boards/RFSoC4x2/qsfp_udp_echo/third_party/verilog-ethernet
+	url = https://github.com/alexforencich/verilog-ethernet.git

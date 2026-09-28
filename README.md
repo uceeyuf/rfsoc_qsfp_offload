@@ -12,6 +12,8 @@
 </table>
 
 # RFSoC Data Offload
+
+> **Fork addition: [100G UDP echo](./boards/RFSoC4x2/qsfp_udp_echo/README.md)** — the same network layer as a PL-only UDP echo (no PYNQ image), 4K video loopback at 400 fps (79.77 Gbit/s each way) byte-exact with DPDK on the host.
 This repository contains an RFSoC4x2 reference design that enables high-speed data offload from the board to a PC/server, via the QSFP28 connection. The RF-ADC data is packetised into UDP packets using the open-source [Network Layer IP](https://github.com/xilinx/xup_vitis_network_example), and sent to the QSFP28 port via Xilinx's CMAC IP core.
 
 ## Equipment and Software Requirements

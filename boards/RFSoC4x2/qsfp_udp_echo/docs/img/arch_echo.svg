@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 380" width="980" height="380" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="980" height="380" fill="#ffffff"/>
+  <rect x="10" y="30" width="790" height="300" rx="8" fill="none" stroke="#999" stroke-dasharray="6 4"/>
+  <text x="18" y="22" font-weight="bold" fill="#333">RFSoC 4x2 PL (XCZU48DR) — everything at the CMAC clock, 512 bit × 322.27 MHz</text>
+
+  <g text-anchor="middle">
+    <!-- Xilinx IP: gray -->
+    <rect x="25" y="120" width="110" height="80" rx="6" fill="#f2f2f2" stroke="#777"/>
+    <text x="80" y="147" font-weight="bold">CMAC</text><text x="80" y="165">100GBASE-SR4</text><text x="80" y="183" fill="#555">RS-FEC</text>
+
+    <!-- verilog-ethernet: blue -->
+    <rect x="165" y="50" width="130" height="64" rx="6" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="230" y="73" font-weight="bold">RX frame FIFO</text><text x="230" y="91">256 KB</text><text x="230" y="107" fill="#555">drops bad FCS / full</text>
+
+    <rect x="165" y="210" width="130" height="64" rx="6" fill="#dae8fc" stroke="#6c8ebf"/>
+    <text x="230" y="233" font-weight="bold">TX frame FIFO</text><text x="230" y="251">32 KB, store &amp; fwd</text><text x="230" y="267" fill="#555">+ min-frame pad</text>
+
+    <!-- XUP network layer: orange -->
+    <rect x="330" y="50" width="200" height="224" rx="6" fill="#ffe6cc" stroke="#d79b00"/>
+    <text x="430" y="78" font-weight="bold">XUP network layer</text>
+    <text x="430" y="98">(HLS, rfsoc_qsfp_offload)</text>
+    <text x="430" y="130">ARP · ICMP echo · UDP</text>
+    <text x="430" y="150">16-socket table</text>
+    <text x="430" y="182" fill="#555">RX: payload + socket (tdest)</text>
+    <text x="430" y="202" fill="#555">TX: headers from the socket</text>
+    <text x="430" y="222" fill="#555">MAC from the ARP table</text>
+
+    <!-- this project: green -->
+    <rect x="570" y="120" width="200" height="80" rx="6" fill="#d5e8d4" stroke="#82b366"/>
+    <text x="670" y="145" font-weight="bold">echo FIFO</text><text x="670" y="163">256 KB, payload + socket</text><text x="670" y="181" fill="#555">whole packets dropped if full</text>
+
+    <rect x="330" y="290" width="200" height="34" rx="6" fill="#d5e8d4" stroke="#82b366"/>
+    <text x="430" y="312" font-weight="bold">nl_config (AXI-Lite master)</text>
+
+    <rect x="570" y="258" width="200" height="66" rx="6" fill="#f2f2f2" stroke="#777"/>
+    <text x="670" y="281" font-weight="bold">VIO (JTAG)</text><text x="670" y="298">per-second counters</text><text x="670" y="315" fill="#555">register read / write</text>
+
+    <!-- host -->
+    <rect x="830" y="100" width="135" height="120" rx="6" fill="#fff" stroke="#555"/>
+    <text x="897" y="125" font-weight="bold">PC</text><text x="897" y="145">ConnectX-4</text><text x="897" y="163">DPDK</text><text x="897" y="181">dpdk_loopback</text><text x="897" y="199" fill="#555">4 TX / 8 RX cores</text>
+  </g>
+
+  <g stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#a)">
+    <path d="M80,120 L80,82 L163,82"/>
+    <path d="M295,82 L328,82"/>
+    <path d="M530,110 L600,110 L600,118"/>
+    <path d="M620,202 L620,240 L532,240"/>
+    <path d="M328,242 L297,242"/>
+    <path d="M165,242 L80,242 L80,202"/>
+    <path d="M430,290 L430,276"/>
+    <path d="M830,150 L806,150"/>
+    <path d="M806,170 L830,170"/>
+  </g>
+  <line x1="138" y1="160" x2="806" y2="160" stroke="#bbb" stroke-dasharray="3 3" display="none"/>
+  <text x="818" y="143" font-size="11" fill="#555" text-anchor="end">QSFP28</text>
+
+  <g font-size="11" fill="#333">
+    <rect x="20" y="345" width="14" height="10" fill="#f2f2f2" stroke="#777"/><text x="40" y="354">Xilinx IP</text>
+    <rect x="120" y="345" width="14" height="10" fill="#ffe6cc" stroke="#d79b00"/><text x="140" y="354">XUP network layer (unchanged)</text>
+    <rect x="330" y="345" width="14" height="10" fill="#dae8fc" stroke="#6c8ebf"/><text x="350" y="354">verilog-ethernet</text>
+    <rect x="470" y="345" width="14" height="10" fill="#d5e8d4" stroke="#82b366"/><text x="490" y="354">this design</text>
+  </g>
+</svg>
