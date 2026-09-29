@@ -13,9 +13,15 @@ Result: **4K video (3840x2160 RGB24) at 400 fps = 79.77 Gbit/s each way, 4000/40
 
 　
 
+| ![video](./docs/img/video_4k320.gif) |
+| :----------------------------------: |
+| **Figure1** : 4K320 through the network layer echo on the board: the frame being sent (left) and the echoed frame as received (right), every frame compared byte by byte, 63.8 Gbps each way |
+
+　
+
 | ![arch](./docs/img/arch_echo.svg) |
 | :-------------------------------: |
-| **Figure1** : echo data path      |
+| **Figure2** : echo data path      |
 
 　
 
@@ -49,10 +55,6 @@ Generated reference (payload computed from frame id and byte offset, so the host
 | **4K400**  | **79.77**       | **4000 / 4000** | **0**        | 2.6 / 3.0 ms      |
 
 FPGA counters over the whole run (126 s with traffic, up to 80.14 Gbit/s out of the CMAC): 0 frames with a bad FCS, 0 RX FIFO drops, 0 cycles of network layer back-pressure on the RX FIFO, 0 echo FIFO drops. Beyond these rates every frame still comes back intact, but the host cannot send them on schedule; the host, not the FPGA, sets the limit.
-
-| ![4k](./docs/img/4k_sent_received.png)                          |
-| :-------------------------------------------------------------: |
-| **Figure2** : a sent 4K frame and its echo at 320 fps (identical) |
 
 Timing met at 322.27 MHz (WNS +0.018 ns, WHS +0.010 ns). Resources: 23,445 LUT (5.5 %), 54,987 FF, 29 BRAM, 18 URAM. Raw data: [docs/results](./docs/results).
 
@@ -114,7 +116,7 @@ sudo host/dpdk_loopback/dpdk_loopback -l 0-12 -a 0000:02:00.0 -- --one-ip --rxq 
      --ref gen --fps 400 --out out_4k400                            # generated reference
 ```
 
-`--one-ip` sends all 16 flows to `192.168.100.128` (source ports 6000–6015, one socket each). `out_*/summary.txt` has one line per rate; `sent.ppm` / `received.ppm` are a frame and its echo at the highest passing rate.
+`--one-ip` sends all 16 flows to `192.168.100.128` (source ports 6000–6015, one socket each). `out_*/summary.txt` has one line per rate; `sent.ppm` / `received.ppm` are a frame and its echo at the highest passing rate. README GIF: `--gif 60` keeps 60 received frames with their counters, `host/make_gif.py build/gif_4k320/gif docs/img/video_4k320.gif` lays them out next to the sent frames.
 
 　
 
@@ -135,9 +137,15 @@ The files of this design (`rtl/`, `scripts/`, `tests/`, `host/`, `ip/`, `constra
 
 　
 
+| ![video](./docs/img/video_4k320.gif) |
+| :----------------------------------: |
+| **图1** : 4K320 经板上网络层回环：左边是正在发送的帧，右边是收回的回环帧，每一帧逐字节比对，每方向 63.8 Gbps |
+
+　
+
 | ![arch](./docs/img/arch_echo.svg) |
 | :-------------------------------: |
-| **图1** : 回环数据通路             |
+| **图2** : 回环数据通路             |
 
 　
 
@@ -171,10 +179,6 @@ The files of this design (`rtl/`, `scripts/`, `tests/`, `host/`, `ip/`, `constra
 | **4K400**  | **79.77**   | **4000 / 4000** | **0**  | 2.6 / 3.0 ms    |
 
 整个测试期间的 FPGA 计数（126 s 有流量，CMAC 输出最高 80.14 Gbit/s）：FCS 错误帧 0，接收 FIFO 丢帧 0，网络层对接收 FIFO 的反压周期 0，回环 FIFO 丢包 0。更高帧率下所有帧仍完整返回，但主机无法按时发出；瓶颈在主机，不在 FPGA。
-
-| ![4k](./docs/img/4k_sent_received.png)                |
-| :---------------------------------------------------: |
-| **图2** : 发送的一帧 4K 画面与 320 fps 下的回环（完全一致） |
 
 322.27 MHz 时序收敛（WNS +0.018 ns，WHS +0.010 ns）。资源：23,445 LUT（5.5 %），54,987 FF，29 BRAM，18 URAM。原始数据：[docs/results](./docs/results)。
 
@@ -236,7 +240,7 @@ sudo host/dpdk_loopback/dpdk_loopback -l 0-12 -a 0000:02:00.0 -- --one-ip --rxq 
      --ref gen --fps 400 --out out_4k400                            # 生成参考
 ```
 
-`--one-ip` 让 16 条流都发往 `192.168.100.128`（源端口 6000–6015，各对应一个 socket）。`out_*/summary.txt` 每个帧率一行；`sent.ppm` / `received.ppm` 是最高通过帧率下的一帧及其回环。
+`--one-ip` 让 16 条流都发往 `192.168.100.128`（源端口 6000–6015，各对应一个 socket）。`out_*/summary.txt` 每个帧率一行；`sent.ppm` / `received.ppm` 是最高通过帧率下的一帧及其回环。README 的 GIF：`--gif 60` 保留 60 帧收到的画面及当时的计数，`host/make_gif.py build/gif_4k320/gif docs/img/video_4k320.gif` 把它们与发送帧并排排版。
 
 　
 

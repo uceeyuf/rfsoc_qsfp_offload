@@ -1,0 +1,11 @@
+== 2026-09-29 23:33:03  037c28f Add citation: CITATION.cff and a Citation section in the README
+generating 20 frames of 3840x2160 ...
+link up, 100000 Mbps
+FPGA MAC 02:00:00:00:00:80
+all 16 flows echo
+FPGA 192.168.100.128 (+0..15) port 1234, 16 flows   payload 8956 B   2779 packets/frame   10 s per step   (DPDK, 4 TX / 8 RX cores, 4096 RX descriptors, inline compare, stored reference)
+3840x2160 @ 320 fps  frames  3200 sent  3200 intact 0 corrupted 0 incomplete   packets lost 0.0000 %   TX 63.81 / RX 63.81 Gbps   latency 3.9 / 4.4 ms
+    tx: schedule slip 1.1 ms   rx: late 2 (drain 0.0 ms)  stale 0  imissed 0  ierrors 0  nombuf 0
+    queues: q0 1113600 [f0 f5] q1 1110400 [f8 f13] q2 1113600 [f1 f4] q3 1110400 [f9 f12] q4 1110400 [f10 f15] q5 1113600 [f2 f7] q6 1107200 [f11 f14] q7 1113600 [f3 f6]
+Ceiling: 3840x2160 @ 320 fps, 63.81 Gbps each way, all frames intact
+sent.ppm / received.ppm: frame 1600 of the 320 fps run

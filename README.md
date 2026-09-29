@@ -13,13 +13,13 @@ This fork adds **[qsfp_udp_echo](./boards/RFSoC4x2/qsfp_udp_echo/README.md)**: t
 
 　
 
+| ![video](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/video_4k320.gif) |
+| :----------------------------------------------------------------: |
+| **Figure1** : 4K320 through the network layer echo: the frame being sent (left) and the echoed frame as received (right), byte-exact, 63.8 Gbps each way |
+
 | ![arch](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/arch_echo.svg) |
 | :-------------------------------------------------------------: |
-| **Figure1** : 100G UDP echo on the network layer                |
-
-| ![4k](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/4k_sent_received.png) |
-| :------------------------------------------------------------------: |
-| **Figure2** : a sent 4K frame and its echo at 320 fps (identical)    |
+| **Figure2** : 100G UDP echo on the network layer                |
 
 　
 
@@ -93,13 +93,13 @@ Fork 自 [strath-sdr/rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsf
 
 　
 
+| ![video](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/video_4k320.gif) |
+| :----------------------------------------------------------------: |
+| **图1** : 4K320 经网络层回环：左边是正在发送的帧，右边是收回的回环帧，逐字节一致，每方向 63.8 Gbps |
+
 | ![arch](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/arch_echo.svg) |
 | :-------------------------------------------------------------: |
-| **图1** : 基于网络层的 100G UDP 回环                            |
-
-| ![4k](./boards/RFSoC4x2/qsfp_udp_echo/docs/img/4k_sent_received.png) |
-| :------------------------------------------------------------------: |
-| **图2** : 发送的一帧 4K 画面与 320 fps 下的回环（完全一致）          |
+| **图2** : 基于网络层的 100G UDP 回环                            |
 
 　
 
