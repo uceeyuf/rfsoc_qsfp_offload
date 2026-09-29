@@ -56,6 +56,26 @@ Build, host setup (DPDK 24.11, ConnectX-4), VIO probes: [boards/RFSoC4x2/qsfp_ud
 
 　
 
+## Citation
+
+If this work helps your research, please cite it:
+
+```bibtex
+@misc{yu2026rfsoc_qsfp_echo,
+    author = {Yijie Yu},
+    title = {{RFSoC 4x2 QSFP28 Data Offload and 100G UDP Echo}},
+    year = {2026},
+    howpublished = {\url{https://github.com/uceeyuf/rfsoc_qsfp_offload}},
+    note = {GitHub repository},
+}
+```
+
+This is a fork: for the original design please also cite [rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsfp_offload) by Josh Goldsmith (University of Strathclyde).
+
+GitHub also offers the citation under **Cite this repository** (from [CITATION.cff](CITATION.cff)).
+
+　
+
 ## License
 
 BSD 3-Clause. Upstream design: Copyright (c) University of Strathclyde (see [LICENSE](LICENSE)). `boards/RFSoC4x2/qsfp_udp_echo`: Copyright (c) 2026, Yijie Yu. Network layer: Xilinx / HPCN-UAM, BSD 3-Clause; verilog-ethernet (submodule): MIT.
@@ -113,6 +133,26 @@ Fork 自 [strath-sdr/rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsf
 | ![fosphor](./assets/gr_fosphor_spectrum.png) |
 | :------------------------------------------: |
 | **图4** : 原设计的 GNU Radio 接收端          |
+
+　
+
+## 引用
+
+如果这个项目对你的研究有帮助，请引用：
+
+```bibtex
+@misc{yu2026rfsoc_qsfp_echo,
+    author = {Yijie Yu},
+    title = {{RFSoC 4x2 QSFP28 Data Offload and 100G UDP Echo}},
+    year = {2026},
+    howpublished = {\url{https://github.com/uceeyuf/rfsoc_qsfp_offload}},
+    note = {GitHub repository},
+}
+```
+
+这是一个 fork：原设计请同时引用 Josh Goldsmith（University of Strathclyde）的 [rfsoc_qsfp_offload](https://github.com/strath-sdr/rfsoc_qsfp_offload)。
+
+GitHub 仓库页的 **Cite this repository** 也提供同样的引用（来自 [CITATION.cff](CITATION.cff)）。
 
 　
 

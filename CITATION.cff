@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "RFSoC 4x2 QSFP28 Data Offload and 100G UDP Echo"
+authors:
+  - family-names: "Yu"
+    given-names: "Yijie"
+repository-code: "https://github.com/uceeyuf/rfsoc_qsfp_offload"
+url: "https://github.com/uceeyuf/rfsoc_qsfp_offload"
+date-released: 2026-09-29
+license: BSD-3-Clause
+keywords:
+  - "RFSoC"
+  - "100GbE"
+  - "UDP"
+  - "QSFP28"
+  - "FPGA"
+references:
+  - type: software
+    title: "rfsoc_qsfp_offload"
+    authors:
+      - family-names: "Goldsmith"
+        given-names: "Josh"
+        affiliation: "University of Strathclyde"
+    url: "https://github.com/strath-sdr/rfsoc_qsfp_offload"
